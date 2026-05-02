@@ -1,0 +1,27 @@
+{
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "vite build",
+        "dev": "vite"
+    },
+    "devDependencies": {
+        "alpinejs": "^3.4.2",
+        "autoprefixer": "^10.4.2",
+        "axios": "^1.8.2",
+        "concurrently": "^9.0.1",
+        "laravel-vite-plugin": "^1.2.0",
+        "postcss": "^8.4.31",
+        "vite": "^6.2.4"
+    },
+    "dependencies": {
+        "@tabler/core": "^1.2.0",
+        "@tailwindcss/vite": "^4.1.11",
+        "bootstrap": "^5.3.6",
+        "datatables.net-bs5": "^2.2.2",
+        "jquery": "^3.7.1",
+        "notyf": "^3.10.0",
+        "tailwindcss": "^4.1.11",
+        "tom-select": "^2.4.3"
+    }
+}
