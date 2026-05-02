@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
-    <link rel="icon" type="image/png" href="{{ asset('storage/img/invanta.png') }}" />
+    <link rel="icon" type="image/png" href="{{ asset('assets/admin/img/invanta.png') }}" />
 
     <title>@yield("title")Invanta Dashboard</title>
     <!-- CSS files -->
@@ -29,7 +29,7 @@
         <div class="container container-tight py-4">
             <div class="text-center mb-4">
                 <a href="" class="navbar-brand navbar-brand">
-                    <img src="{{ asset('storage/img/invanta.jpeg')}}" class="w-50 mx-auto d-block" alt="@yield('page_title', config('app.name'))" style="border-radius: 50%;">
+                    <img src="{{ asset('assets/admin/img/invanta.jpeg')}}" class="w-50 mx-auto d-block" alt="@yield('page_title', config('app.name'))" style="border-radius: 50%;">
                 </a>
             </div>
             @yield('content')

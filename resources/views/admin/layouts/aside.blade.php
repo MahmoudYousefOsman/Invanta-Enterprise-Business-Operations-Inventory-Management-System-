@@ -67,12 +67,12 @@
         <h1 class="navbar-brand navbar-brand">
             @if(Auth::guard('engineer')->check())
                 <a href="{{ route('admin.engineer.tasks') }}">
-                    <img src="{{ asset('storage/img/invanta.png') }}" width="200" height="200" alt="Invanta"
+                    <img src="{{ asset('assets/admin/img/invanta.png') }}" width="200" height="200" alt="Invanta"
                          class="navbar-brand-image" style="width: 200px; height: 200px; ">
                 </a>
             @else
                 <a href="{{ route('admin.dashboard') }}">
-                    <img src="{{ asset('storage/img/invanta.png') }}" width="200" height="200" alt="Invanta"
+                    <img src="{{ asset('assets/admin/img/invanta.png') }}" width="200" height="200" alt="Invanta"
                          class="navbar-brand-image" style="width: 200px; height: 200px; ">
             @endif
         </h1>
@@ -196,23 +196,7 @@
                                                 إضافة مهندس
                                             </a>
                                         @endif
-                                        {{--                                        @if($user->can('engineer_account'))--}}
-
-                                        {{--                                            <a class="dropdown-item {{ request()->routeIs('admin.engineer_transactions') ? 'active' : '' }}"--}}
-                                        {{--                                               href="{{ route('admin.engineer_transactions') }}">--}}
-                                        {{--                                                <svg xmlns="http://www.w3.org/2000/svg"--}}
-                                        {{--                                                     class="icon icon-tabler icon-tabler-report"--}}
-                                        {{--                                                     width="20" height="20" viewBox="0 0 24 24"--}}
-                                        {{--                                                     stroke-width="2" stroke="currentColor" fill="none"--}}
-                                        {{--                                                     stroke-linecap="round" stroke-linejoin="round">--}}
-                                        {{--                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>--}}
-                                        {{--                                                    <path d="M17 3l4 4l-11 11h-4v-4z"/>--}}
-                                        {{--                                                    <path d="M12 7l-9 9v4h4l9 -9"/>--}}
-                                        {{--                                                </svg>--}}
-
-                                        {{--                                                كشف حساب المهندسين--}}
-                                        {{--                                            </a>--}}
-                                        {{--                                        @endif--}}
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -375,63 +359,7 @@
                                             </svg>
                                             كشف حساب المورين
                                         </a>
-                                        {{-- <a class="dropdown-item {{ request()->routeIs('admin.create.supplier.products') ? 'active' : '' }}"
-                                           href="{{ route('admin.create.supplier.products') }}">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                 class="icon icon-tabler icon-tabler-report"
-                                                 width="20" height="20" viewBox="0 0 24 24"
-                                                 stroke-width="2" stroke="currentColor" fill="none"
-                                                 stroke-linecap="round" stroke-linejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                                <path d="M17 3l4 4l-11 11h-4v-4z"/>
-                                                <path d="M12 7l-9 9v4h4l9 -9"/>
-                                            </svg>
-                                            اضافه منتجات الموردين
-                                        </a>
-                                        <a class="dropdown-item {{ request()->routeIs('admin.index.supplier.products') ? 'active' : '' }}"
-                                           href="{{ route('admin.index.supplier.products') }}">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                 class="icon icon-tabler icon-tabler-report"
-                                                 width="20" height="20" viewBox="0 0 24 24"
-                                                 stroke-width="2" stroke="currentColor" fill="none"
-                                                 stroke-linecap="round" stroke-linejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                                <path d="M17 3l4 4l-11 11h-4v-4z"/>
-                                                <path d="M12 7l-9 9v4h4l9 -9"/>
-                                            </svg>
-                                            رصيد الموردين
-                                        </a> --}}
-
-                                        {{--                                        <a class="dropdown-item {{ request()->routeIs('') ? 'active' : '' }}"--}}
-                                        {{--                                           href="{{ route('') }}">--}}
-                                        {{--                                            <svg xmlns="http://www.w3.org/2000/svg"--}}
-                                        {{--                                                 class="icon icon-tabler icon-tabler-history" width="20"--}}
-                                        {{--                                                 height="20"--}}
-                                        {{--                                                 viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"--}}
-                                        {{--                                                 fill="none"--}}
-                                        {{--                                                 stroke-linecap="round" stroke-linejoin="round">--}}
-                                        {{--                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>--}}
-                                        {{--                                                <path d="M12 8v4l3 3"/>--}}
-                                        {{--                                                <path d="M4.05 13a8 8 0 1 0 .5 -4m-.5 4h3v-3"/>--}}
-                                        {{--                                            </svg>--}}
-                                        {{--                                            حركة المورد--}}
-                                        {{--                                        </a>--}}
-                                        {{--                                        <a class="dropdown-item {{ request()->routeIs('') ? 'active' : '' }}"--}}
-                                        {{--                                           href="{{ route('') }}">--}}
-                                        {{--                                            <svg xmlns="http://www.w3.org/2000/svg"--}}
-                                        {{--                                                 class="icon icon-tabler icon-tabler-package" width="20"--}}
-                                        {{--                                                 height="20"--}}
-                                        {{--                                                 viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"--}}
-                                        {{--                                                 fill="none"--}}
-                                        {{--                                                 stroke-linecap="round" stroke-linejoin="round">--}}
-                                        {{--                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>--}}
-                                        {{--                                                <path d="M12 3l8 4.5l0 9l-8 4.5l-8 -4.5l0 -9l8 -4.5" />--}}
-                                        {{--                                                <path d="M12 12l8 -4.5" />--}}
-                                        {{--                                                <path d="M12 12l0 9" />--}}
-                                        {{--                                                <path d="M12 12l-8 -4.5" />--}}
-                                        {{--                                            </svg>--}}
-                                        {{--                                            مخزون الموردين--}}
-                                        {{--                                        </a>--}}
+                                       
                                     </div>
                                 </div>
                             </div>
@@ -785,38 +713,7 @@
                         </li>
                     @endif
                     @if($user->can('view_settings'))
-                        {{-- الإعدادات --}}
-                        {{-- <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown"
-                               data-bs-auto-close="outside" role="button" aria-expanded="false">
-                            <span class="nav-link-icon d-md-none d-lg-inline-block">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                     stroke-linejoin="round"
-                                     class="icon icon-tabler icons-tabler-outline icon-tabler-settings"><path
-                                        stroke="none" d="M0 0h24v24H0z" fill="none"/><path
-                                        d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z"/><path
-                                        d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/></svg>
-                            </span>
-                                <span class="nav-link-title">الإعدادات</span>
-                            </a>
-
-                            <div class="dropdown-menu">
-                                <div class="dropdown-menu-columns">
-                                    <div class="dropdown-menu-column">
-                                        <a class="dropdown-item" href="{{route('admin.roles.index')}}">
-                                            الصلاحيات
-                                        </a>
-                                        <a class="dropdown-item" href="{{ route('admin.admins.index') }}">
-                                            المديرين
-                                        </a>
-                                        <a class="dropdown-item" href="{{ route('admin.setting.index') }}">
-                                            إعدادات النظام
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </li> --}}
+                       
                     @endif
                     @if($user->can('reports'))
                         {{-- reports --}}

@@ -77,7 +77,7 @@
 <div class="page">
 
     <div class="logo">
-        <img src="{{ asset('storage/img/invanta.jpeg') }}" alt="Invanta Logo">
+        <img src="{{ asset('assets/admin/img/invanta.jpeg') }}" alt="Invanta Logo">
     </div>
 
     <h3 class="pt-7"> اذن استلام صيانة للاصلاح في خلال 14 يوم بعد الميعاد والشركه غير مسئوله عن الجهاز</h3>
@@ -125,7 +125,7 @@
 <div class="page">
 
     <div class="logo">
-        <img src="{{ asset('storage/img/invanta.jpeg') }}" alt="Invanta Logo">
+        <img src="{{ asset('assets/admin/img/invanta.jpeg') }}" alt="Invanta Logo">
     </div>
 
     <h3>الشروط والأحكام</h3>

@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
-    <link rel="icon" type="image/png" href="{{ asset('storage/img/invanta.png') }}" />
+    <link rel="icon" type="image/png" href="{{ asset('assets/admin/img/invanta.png') }}" />
 
     <title>Invanta Dashboard @yield("title")</title>
     <!-- CSS files -->
