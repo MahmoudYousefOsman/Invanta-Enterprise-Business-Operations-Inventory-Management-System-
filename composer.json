@@ -15,22 +15,23 @@
         "laravel/tinker": "^2.10.1",
         "mpdf/qrcode": "^1.2",
         "php-flasher/flasher-notyf-symfony": "^2.1",
-        "picqer/php-barcode-generator": "^3.2"
+        "picqer/php-barcode-generator": "^3.2",
+        "spatie/laravel-permission": "^6.17",
+        "yajra/laravel-datatables": "12.0",
+        "yajra/laravel-datatables-oracle": "12.0",
+        "php-flasher/flasher-notyf-laravel": "^2.1",
+        "laravel/sanctum": "^4.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
         "laravel/pail": "^1.2.2",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.41",
-        "laravel/sanctum": "^4.0",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.6",
         "pestphp/pest": "^3.8",
         "pestphp/pest-plugin-laravel": "^3.2",
-        "spatie/laravel-permission": "^6.17",
-        "yajra/laravel-datatables": "12.0",
-        "yajra/laravel-datatables-oracle": "12.0",
-        "php-flasher/flasher-notyf-laravel": "^2.1"
+
     },
     "autoload": {
         "psr-4": {
