@@ -11,14 +11,13 @@
     "require": {
         "php": "^8.2",
         "endroid/qr-code": "^6.0",
-        "laravel/framework": "12.28.1",
-        "laravel/tinker": "^2.10.1",
+        "laravel/framework": "^11.0",
+        "laravel/tinker": "^2.9",
         "mpdf/qrcode": "^1.2",
-
         "picqer/php-barcode-generator": "^3.2",
-        "spatie/laravel-permission": "^6.17",
-        "yajra/laravel-datatables": "12.0",
-        "yajra/laravel-datatables-oracle": "12.0",
+        "spatie/laravel-permission": "^6.0",
+        "yajra/laravel-datatables": "^11.0",
+        "yajra/laravel-datatables-oracle": "^11.0",
         "php-flasher/flasher-notyf-laravel": "^2.1",
         "laravel/sanctum": "^4.0"
     },
