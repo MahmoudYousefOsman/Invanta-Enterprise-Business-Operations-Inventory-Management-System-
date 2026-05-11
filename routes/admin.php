@@ -1,19 +1,19 @@
 <?php
 
-use App\Http\Controllers\admin\AdminController;
-use App\Http\Controllers\admin\CategoryController;
-use App\Http\Controllers\admin\ClientController;
-use App\Http\Controllers\admin\EngineerAuth\LoginController;
-use App\Http\Controllers\admin\EngineerController;
-use App\Http\Controllers\admin\InvoiceReturnController;
-use App\Http\Controllers\admin\NotificationController;
-use App\Http\Controllers\admin\OrderController;
-use App\Http\Controllers\admin\ProductController;
-use App\Http\Controllers\admin\PurchaseController;
-use App\Http\Controllers\admin\RoleController;
-use App\Http\Controllers\admin\SettingController;
-use App\Http\Controllers\admin\SupplierController;
-use App\Http\Controllers\admin\TaskController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ClientController;
+use App\Http\Controllers\Admin\EngineerAuth\LoginController;
+use App\Http\Controllers\Admin\EngineerController;
+use App\Http\Controllers\Admin\InvoiceReturnController;
+use App\Http\Controllers\Admin\NotificationController;
+use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\PurchaseController;
+use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\SupplierController;
+use App\Http\Controllers\Admin\TaskController;
 use App\Http\Middleware\RedirectIfNotAdminMiddleware;
 use App\Http\Middleware\RedirectIfNotEngineerMiddleware;
 use App\Models\InvoiceReturn;
@@ -24,16 +24,16 @@ Route::group(['middleware' => [RedirectIfNotAdminMiddleware::class]], function (
 
     //reports
 
-    Route::get('reports/order/index', [\App\Http\Controllers\admin\ReportsController::class, 'orderReportIndex'])->name('order.report.index');
-    Route::get('reports/order/search', [\App\Http\Controllers\admin\ReportsController::class, 'orderReport'])->name('order.report.search');
+    Route::get('reports/order/index', [\App\Http\Controllers\Admin\ReportsController::class, 'orderReportIndex'])->name('order.report.index');
+    Route::get('reports/order/search', [\App\Http\Controllers\Admin\ReportsController::class, 'orderReport'])->name('order.report.search');
     //return report
-    Route::get('reports/return/index', [\App\Http\Controllers\admin\ReportsController::class, 'returnReportIndex'])->name('return.report.index');
+    Route::get('reports/return/index', [\App\Http\Controllers\Admin\ReportsController::class, 'returnReportIndex'])->name('return.report.index');
     //purchases report
-    Route::get('reports/purchases', [\App\Http\Controllers\admin\ReportsController::class, 'PurchasesReport'])->name('purchases.report');
+    Route::get('reports/purchases', [\App\Http\Controllers\Admin\ReportsController::class, 'PurchasesReport'])->name('purchases.report');
     //task report
-    Route::get('reports/task', [\App\Http\Controllers\admin\ReportsController::class, 'TaskReport'])->name('task.report');
+    Route::get('reports/task', [\App\Http\Controllers\Admin\ReportsController::class, 'TaskReport'])->name('task.report');
     //general report
-    Route::get('general/report', [\App\Http\Controllers\admin\ReportsController::class, 'generalReport'])->name('general.report');
+    Route::get('general/report', [\App\Http\Controllers\Admin\ReportsController::class, 'generalReport'])->name('general.report');
 
     //////////////
     Route::get('/notifications/{id}/redirect', [NotificationController::class, 'redirect'])->name('notifications.redirect');

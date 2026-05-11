@@ -14,7 +14,7 @@
         "laravel/framework": "12.28.1",
         "laravel/tinker": "^2.10.1",
         "mpdf/qrcode": "^1.2",
-        "php-flasher/flasher-notyf-symfony": "^2.1",
+
         "picqer/php-barcode-generator": "^3.2",
         "spatie/laravel-permission": "^6.17",
         "yajra/laravel-datatables": "12.0",

@@ -15,7 +15,7 @@
                 Route::middleware('web')
                     ->prefix('admin')
                     ->name('admin.')
-                    ->namespace('App\Http\Controllers\admin')
+                    ->namespace('App\Http\Controllers\Admin')
                     ->group(base_path('routes/admin.php'));
 
 
