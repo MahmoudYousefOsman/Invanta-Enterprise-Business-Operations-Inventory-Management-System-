@@ -1,54 +1,3 @@
-<style>
-
-    /* Sidebar Background */
-    .navbar-vertical {
-        background: linear-gradient(180deg, #1e3a8a, #020617) !important;
-        border-right: none;
-    }
-
-    /* Links */
-    .navbar-vertical .nav-link {
-        color: #cbd5f5;
-        font-weight: 500;
-        border-radius: 8px;
-        margin: 4px 8px;
-        transition: all .25s ease;
-    }
-
-    /* Hover */
-    .navbar-vertical .nav-link:hover {
-        background: rgba(255,255,255,0.1);
-        color: #ffffff;
-        transform: translateX(3px);
-    }
-
-    /* Active */
-    .navbar-vertical .nav-link.active {
-        background: #2563eb;
-        color: #fff;
-        box-shadow: 0 4px 12px rgba(0,0,0,.2);
-    }
-
-    /* Dropdown items */
-    .navbar-vertical .dropdown-menu {
-        background: #0f172a;
-        border: none;
-    }
-
-    .navbar-vertical .dropdown-item {
-        color: #cbd5f5;
-        border-radius: 6px;
-        transition: .2s;
-    }
-
-    .navbar-vertical .dropdown-item:hover {
-        background: #1e40af;
-        color: white;
-    }
-
-</style>
-
-
 @php
     if (Auth::guard('admin')->check()) {
         $user = Auth::guard('admin')->user();
@@ -58,7 +7,7 @@
         $user = null;
     }
 @endphp
-<aside class="navbar navbar-vertical navbar-left navbar-expand-lg" data-bs-theme="dark">
+<aside class="navbar navbar-vertical navbar-left navbar-expand-lg">
     <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar-menu"
                 aria-controls="sidebar-menu" aria-expanded="false" aria-label="Toggle navigation">

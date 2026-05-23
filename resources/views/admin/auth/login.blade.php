@@ -1,8 +1,9 @@
 @extends('admin.layouts.auth')
 @section('content')
-    <div class="card card-md">
-        <div class="card-body">
-            <h2 class="h2 text-center mb-4">تسجيل الدخول</h2>
+    <div class="card card-md inv-auth-card">
+        <div class="card-body p-4 p-md-5">
+            <h2 class="h2 text-center mb-1">مرحبًا بعودتك 👋</h2>
+            <p class="text-muted text-center mb-4">سجّل دخولك للوصول إلى لوحة التحكم</p>
             <form method="POST" action="{{ route('admin.login') }}" autocomplete="off" novalidate>
                 <div class="mb-3">
                     <label class="form-label">البريد الالكتروني</label>
@@ -37,10 +38,10 @@
                 </div>
                 <div class="form-footer">
                     @csrf
-                    <button type="submit" class="btn btn-primary w-100">تسحيل الدخول</button>
+                    <button type="submit" class="btn btn-primary w-100">تسجيل الدخول</button>
 
-                    <a href="{{url('admin/engineer/login')}}" >
-                        <button type="button" class="btn btn-primary w-100 mt-2">تسحيل دخول المهندس</button>
+                    <a href="{{url('admin/engineer/login')}}" class="d-block">
+                        <button type="button" class="btn btn-outline-primary w-100 mt-2">تسجيل دخول المهندس</button>
                     </a>
                 </div>
             </form>

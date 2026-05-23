@@ -4,6 +4,7 @@
 @import "datatables.net-bs5/css/dataTables.bootstrap5.css";
 @import '../../public/assets/admin/css/custom.css';
 @import "notyf/notyf.min.css";
+@import './theme.css';
 
 
 table.table.dataTable.table-striped > tbody > tr:nth-of-type(2n+1) > * {

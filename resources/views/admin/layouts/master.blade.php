@@ -1,26 +1,30 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}" dir="rtl">
+<html lang="{{ app()->getLocale() }}" dir="rtl" data-bs-theme="light">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="theme-color" content="#2563eb">
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
     <link rel="icon" type="image/png" href="{{ asset('assets/admin/img/invanta.png') }}" />
 
     <title>Invanta Dashboard @yield("title")</title>
+
+    {{-- No-flash theme bootstrap: apply the stored theme before first paint --}}
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('invanta-theme') || 'light';
+                document.documentElement.setAttribute('data-bs-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+
     <!-- CSS files -->
     @vite(['resources/css/admin_rtl.css'])
     @stack('styles')
-        <style>
-            .ts-dropdown, .ts-dropdown.form-control, .ts-dropdown.form-select {
-                background-color: #ffffff !important;
-                opacity: 1 !important;
-                border: 1px solid #ced4da;
-                z-index: 1050;
-            }
-        </style>
     <!-- Font Awesome CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -46,7 +50,15 @@
 
 @stack('scripts')
 
-<script type="text/javascript">
+{{-- Light / Dark theme toggle --}}
+<script>
+    window.invantaToggleTheme = function () {
+        var html = document.documentElement;
+        var next = html.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-bs-theme', next);
+        try { localStorage.setItem('invanta-theme', next); } catch (e) {}
+        document.dispatchEvent(new CustomEvent('invanta:theme', { detail: next }));
+    };
     window.addEventListener('alert', event => {
         //
     });

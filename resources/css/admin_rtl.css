@@ -3,6 +3,7 @@
 @import 'tom-select/dist/css/tom-select.bootstrap5.min.css';
 @import '../../public/assets/admin/css/custom.css';
 @import "notyf/notyf.min.css";
+@import './theme.css';
 @font-face {
     font-family: "Janna";
     src: url("../../public/assets/fonts/JannaLT-Regular.eot");
