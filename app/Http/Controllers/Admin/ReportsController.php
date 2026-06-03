@@ -170,41 +170,88 @@ class ReportsController extends Controller
 
     public function generalReport(Request $request)
     {
-        $taskQuery = Task::query();
-        $orderQuery = Order::query();
+        $taskQuery   = Task::query();
+        $orderQuery  = Order::query();
         $returnQuery = InvoiceReturn::query();
         $purchaseQuery = Purchase::query();
 
+        $fromDate = $request->from_date;
+        $toDate   = $request->to_date;
+
         if ($request->filled('from_date')) {
-            $taskQuery->whereDate('created_at', '>=', $request->from_date);
-            $orderQuery->whereDate('created_at', '>=', $request->from_date);
-            $returnQuery->whereDate('created_at', '>=', $request->from_date);
-            $purchaseQuery->whereDate('created_at', '>=', $request->from_date);
+            $taskQuery->whereDate('created_at', '>=', $fromDate);
+            $orderQuery->whereDate('created_at', '>=', $fromDate);
+            $returnQuery->whereDate('created_at', '>=', $fromDate);
+            $purchaseQuery->whereDate('created_at', '>=', $fromDate);
         }
 
         if ($request->filled('to_date')) {
-            $taskQuery->whereDate('created_at', '<=', $request->to_date);
-            $orderQuery->whereDate('created_at', '<=', $request->to_date);
-            $returnQuery->whereDate('created_at', '<=', $request->to_date);
-            $purchaseQuery->whereDate('created_at', '<=', $request->to_date);
+            $taskQuery->whereDate('created_at', '<=', $toDate);
+            $orderQuery->whereDate('created_at', '<=', $toDate);
+            $returnQuery->whereDate('created_at', '<=', $toDate);
+            $purchaseQuery->whereDate('created_at', '<=', $toDate);
         }
 
-        // Totals
-        $tasksTotal = $taskQuery->where('status', 'completed')->sum('cost');
-        $ordersTotal = $orderQuery->sum('total_price');
-        $purchasesTotal = $purchaseQuery->sum('total_price');
-        $returnsTotal = $returnQuery->sum('total_price');
+        // ── Totals ──────────────────────────────────────────────────
+        $tasksTotal     = (clone $taskQuery)->where('status', 'completed')->sum('cost');
+        $ordersTotal    = (clone $orderQuery)->sum('total_price');
+        $purchasesTotal = (clone $purchaseQuery)->sum('total_price');
+        $returnsTotal   = (clone $returnQuery)->sum('total_price');
+        $totalSales     = $tasksTotal + $ordersTotal;
+        $profit         = $totalSales - ($purchasesTotal + $returnsTotal);
 
-        $totalSales = $tasksTotal + $ordersTotal;
-        $profit = $totalSales - ($purchasesTotal + $returnsTotal);
+        // ── Orders count & tasks count (for donut) ──────────────────
+        $ordersCount = (clone $orderQuery)->count();
+        $tasksCount  = (clone $taskQuery)->count();
+
+        // Tasks status distribution
+        $tasksPending    = Task::when($fromDate, fn($q) => $q->whereDate('created_at', '>=', $fromDate))
+                               ->when($toDate,   fn($q) => $q->whereDate('created_at', '<=', $toDate))
+                               ->where('status', 'new')->count(); // 'new' represents pending/new tasks in this app
+        $tasksInProgress = 0; // 'in_progress' is not a database state for tasks
+        $tasksCompleted  = Task::when($fromDate, fn($q) => $q->whereDate('created_at', '>=', $fromDate))
+                               ->when($toDate,   fn($q) => $q->whereDate('created_at', '<=', $toDate))
+                               ->where('status', 'completed')->count();
+        $tasksCancelled  = Task::when($fromDate, fn($q) => $q->whereDate('created_at', '>=', $fromDate))
+                               ->when($toDate,   fn($q) => $q->whereDate('created_at', '<=', $toDate))
+                               ->where('status', 'cancelled')->count();
+
+        // Orders payment status distribution
+        $ordersPaid   = Order::when($fromDate, fn($q) => $q->whereDate('created_at', '>=', $fromDate))
+                             ->when($toDate,   fn($q) => $q->whereDate('created_at', '<=', $toDate))
+                             ->count(); // all orders are considered completed/paid sales
+        $ordersUnpaid = 0;
+
+        // ── Monthly trend (last 7 months) ───────────────────────────
+        $months       = [];
+        $monthLabels  = [];
+        $monthOrders  = [];
+        $monthTasks   = [];
+        $monthPurchases = [];
+
+        $arabicMonths = [
+            1 => 'يناير', 2 => 'فبراير', 3 => 'مارس',    4 => 'أبريل',
+            5 => 'مايو',  6 => 'يونيو',  7 => 'يوليو',   8 => 'أغسطس',
+            9 => 'سبتمبر', 10 => 'أكتوبر', 11 => 'نوفمبر', 12 => 'ديسمبر',
+        ];
+
+        for ($i = 6; $i >= 0; $i--) {
+            $date = now()->subMonths($i);
+            $y = $date->year;
+            $m = $date->month;
+            $monthLabels[]    = $arabicMonths[$m];
+            $monthOrders[]    = Order::whereYear('created_at', $y)->whereMonth('created_at', $m)->sum('total_price');
+            $monthTasks[]     = Task::whereYear('created_at', $y)->whereMonth('created_at', $m)->where('status', 'completed')->sum('cost');
+            $monthPurchases[] = Purchase::whereYear('created_at', $y)->whereMonth('created_at', $m)->sum('total_price');
+        }
 
         return view('admin.reports.general_report', compact(
-            'tasksTotal',
-            'ordersTotal',
-            'purchasesTotal',
-            'returnsTotal',
-            'totalSales',
-            'profit'
+            'tasksTotal', 'ordersTotal', 'purchasesTotal', 'returnsTotal',
+            'totalSales', 'profit',
+            'ordersCount', 'tasksCount',
+            'tasksPending', 'tasksInProgress', 'tasksCompleted', 'tasksCancelled',
+            'ordersPaid', 'ordersUnpaid',
+            'monthLabels', 'monthOrders', 'monthTasks', 'monthPurchases'
         ));
     }
 

@@ -56,15 +56,16 @@
     --tblr-secondary: #5b6783;
     --tblr-muted: #8a94a8;
 
-    --inv-sidebar-bg: #ffffff;
-    --inv-sidebar-fg: #51607c;
-    --inv-sidebar-muted: #98a2b8;
+    /* Keep sidebar dark even in light theme */
+    --inv-sidebar-bg: var(--inv-sidebar-gradient);
+    --inv-sidebar-fg: #b9c6e4;
+    --inv-sidebar-muted: #6b779a;
     --inv-sidebar-active-bg: var(--inv-brand-gradient);
     --inv-sidebar-active-fg: #ffffff;
-    --inv-sidebar-hover-bg: var(--inv-brand-50);
-    --inv-sidebar-hover-fg: var(--inv-brand-700);
-    --inv-sidebar-border: #eef1f8;
-    --inv-sidebar-submenu-bg: #f6f8fe;
+    --inv-sidebar-hover-bg: rgba(255, 255, 255, .07);
+    --inv-sidebar-hover-fg: #ffffff;
+    --inv-sidebar-border: rgba(255, 255, 255, .06);
+    --inv-sidebar-submenu-bg: rgba(255, 255, 255, .035);
 
     --inv-header-bg: rgba(255, 255, 255, .82);
     --inv-header-border: rgba(15, 23, 42, .06);
