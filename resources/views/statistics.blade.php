@@ -565,7 +565,7 @@
                                 <div>
                                     <div class="text-muted small fw-bold mb-0.5">مؤشر الأرباح اليومي</div>
                                     <div class="d-flex align-items-center">
-                                        <span class="fs-2 fw-bold text-dark me-2">{{ number_format($todayEarningSum, 2) }} ج.م</span>
+                                        <span class="fs-2 fw-bold me-2">{{ number_format($todayEarningSum, 2) }} ج.م</span>
                                         @if($earningDiffPercent >= 0)
                                             <span class="text-green small fw-bold d-flex align-items-center">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" fill="none" class="me-0.5"><path d="M3 17l6 -6l4 4l8 -8"/><path d="M14 7l7 0l0 7"/></svg>
@@ -598,7 +598,7 @@
                             <div class="card-body p-3">
                                 <h3 class="card-title fw-bold mb-2">استهلاك قاعدة البيانات والمساحة</h3>
                                 <div class="d-flex justify-content-between align-items-baseline mb-2">
-                                    <span class="fs-2 fw-bold text-dark" id="usedStorageText">مستخدم {{ number_format($usedMB, 0) }} ميجابايت</span>
+                                    <span class="fs-2 fw-bold" id="usedStorageText">مستخدم {{ number_format($usedMB, 0) }} ميجابايت</span>
                                     <span class="text-muted small">من إجمالي {{ number_format($totalMB / 1024, 0) }} جيجابايت</span>
                                 </div>
                                 
@@ -655,7 +655,7 @@
                                                 @endswitch
                                             </div>
                                             <div>
-                                                <div class="text-dark fw-bold mb-0.5" style="font-size: 0.9rem;">{{ $feed['text'] }}</div>
+                                                <div class="fw-bold mb-0.5" style="font-size: 0.9rem;">{{ $feed['text'] }}</div>
                                                 <span class="text-muted small">{{ $feed['time_diff'] }}</span>
                                             </div>
                                         </div>
@@ -690,7 +690,7 @@
                                                     <div class="avatar-letter">
                                                         {{ mb_substr($tx['user'], 0, 1) }}
                                                     </div>
-                                                    <span class="font-weight-medium text-dark">{{ $tx['user'] }}</span>
+                                                    <span class="font-weight-medium">{{ $tx['user'] }}</span>
                                                 </div>
                                             </td>
                                             <td data-label="نوع العملية">
