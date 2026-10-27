@@ -1,3 +1,11 @@
+<img width="1522" height="969" alt="BCO 8d981686-80e4-402e-900c-dd640f874d8d" src="https://github.com/user-attachments/assets/5a4d7d8d-3c29-448a-89b2-15763ebfc96f" />
+
+<img width="1408" height="736" alt="01nym" src="https://github.com/user-attachments/assets/70dad5e0-b752-41fa-bb7b-5d58bddbeac5" />
+
+
+[INVANTA - Integrated ERP System.pdf](https://github.com/user-attachments/files/34033573/INVANTA.-.Integrated.ERP.System.pdf)
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -60,3 +68,5 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 # hostingGProject
+
+
