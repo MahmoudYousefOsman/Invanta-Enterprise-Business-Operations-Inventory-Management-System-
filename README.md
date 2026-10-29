@@ -15,6 +15,24 @@
 
 ---
 
+## 📸 System Screenshots
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/5a4d7d8d-3c29-448a-89b2-15763ebfc96f" width="400" alt="Dashboard / Overview" />
+      <br />
+      <sub><b>System Dashboard & Analytics</b></sub>
+    </td>
+   <td align="center">
+      <img src="https://github.com/user-attachments/assets/76df0d50-09f1-4f4d-a4cd-d803ef1f27cd" width="400" alt="Maintenance Module" />
+      <br />
+      <sub><b>Maintenance & Task Tracking</b></sub>
+    </td>
+  </tr>
+ 
+</table>
+
 ## 🏗️ Architecture & Core Modules
 
 - **Centralized Business Operations:** End-to-end integration across sales, procurement, and inventory control.
@@ -34,35 +52,6 @@
 - **Version Control:** Git & GitHub
 - **Reporting:** Automated financial and operational report generation engines
 
----
 
-## 📸 System Screenshots
-
-<table>
-  <tr>
-    <td align="center">
-      <img src="https://github.com/user-attachments/assets/5a4d7d8d-3c29-448a-89b2-15763ebfc96f" width="400" alt="Dashboard / Overview" />
-      <br />
-      <sub><b>System Dashboard & Analytics</b></sub>
-    </td>
-    <td align="center">
-      <img src="https://github.com/user-attachments/assets/70dad5e0-b752-41fa-bb7b-5d58bddbeac5" width="400" alt="Operations Module" />
-      <br />
-      <sub><b>Operations & Management Workflow</b></sub>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <img src="https://github.com/user-attachments/assets/76df0d50-09f1-4f4d-a4cd-d803ef1f27cd" width="400" alt="Maintenance Module" />
-      <br />
-      <sub><b>Maintenance & Task Tracking</b></sub>
-    </td>
-    <td align="center">
-      <img src="https://github.com/user-attachments/assets/50a6a590-8e2c-48e9-b24d-10c506d11966" width="400" alt="Inventory & Reports" />
-      <br />
-      <sub><b>Inventory & Reporting Interface</b></sub>
-    </td>
-  </tr>
-</table>
 
 ---
